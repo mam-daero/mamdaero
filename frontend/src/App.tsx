@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:480ea7521f1df938fd4b65c8c7b090894d85abc1471e84842a05e21955686c75
-size 908
+import { useState } from 'react';
+import './styles/index.css';
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <div className="App">
+        <div className="text-3xl font-bold underline">test</div>
+        <div className="card">
+          <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default App;
