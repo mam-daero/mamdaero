@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import NavClient from './components/navigation/NavClient.tsx';
-import RoundedButton from './components/button/RoundedButton.tsx';
-import SquareButton from './components/button/SquareButton.tsx';
+import NavClient from 'components/navigation/NavClient.tsx';
+import RoundedButton from 'components/button/RoundedButton.tsx';
+import SquareButton from 'components/button/SquareButton.tsx';
 function App() {
   const [count, setCount] = useState(0);
   return (
