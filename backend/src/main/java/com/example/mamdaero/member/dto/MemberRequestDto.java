@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class MemberDto {
+public class MemberRequestDto {
     private String nickname;
     private Date birth;
     private String tel;
