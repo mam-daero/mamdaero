@@ -1,10 +1,6 @@
 import LoginClient from '@/components/input/LoginClient.tsx';
 const Page = () => {
-  return (
-    <div>
-      <LoginClient />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Page;

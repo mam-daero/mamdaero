@@ -8,9 +8,9 @@ const KakaoLoginButton = () => {
     <button
       onClick={Click}
       style={{ backgroundColor: '#FEE500' }}
-      className="flex items-center justify-center w-12 h-12 rounded-full shadow-md"
+      className="flex items-center justify-center w-10 h-10 rounded-full shadow-md"
     >
-      <img src={KakaoLogo} alt="Kakao Logo" className="w-6 h-6" />
+      <img src={KakaoLogo} alt="Kakao Logo" className="w-5 h-5" />
     </button>
   );
 };

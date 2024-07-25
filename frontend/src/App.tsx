@@ -1,15 +1,13 @@
 import { useState } from 'react';
 
 import NavClient from '@/components/navigation/NavClient.tsx';
-import MainPageClient from '@/pages/MainPageClient.tsx';
-import MainPageCounselor from '@/pages/MainPageCounselor.tsx';
+import MainPage from '@/pages/MainPage.tsx';
 function App() {
   const [count, setCount] = useState(0);
   return (
     <div className="App">
+      <MainPage />
       <NavClient />
-      <MainPageClient />
-      <MainPageCounselor />
     </div>
   );
 }
