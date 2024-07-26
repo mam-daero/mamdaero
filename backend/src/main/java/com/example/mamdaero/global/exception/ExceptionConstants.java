@@ -1,4 +1,4 @@
-package com.example.global.exception;
+package com.example.mamdaero.global.exception;
 
 import org.springframework.http.HttpStatus;
 
