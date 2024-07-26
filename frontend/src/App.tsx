@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import './styles/index.css';
+
+import NavClient from '@/components/navigation/NavClient.tsx';
+import MainPage from '@/pages/MainPage.tsx';
 function App() {
   const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div className="App"></div>
-    </>
+    <div className="App">
+      <MainPage />
+      <NavClient />
+    </div>
   );
 }
 
