@@ -1,4 +1,4 @@
-package com.example.mamdaero.work_schedule.entity;
+package com.mamdaero.domain.work_schedule.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
