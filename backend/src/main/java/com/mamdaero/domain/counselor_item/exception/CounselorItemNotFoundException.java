@@ -1,6 +1,6 @@
 package com.mamdaero.domain.counselor_item.exception;
 
-import com.mamdaero.global.entity.CustomException;
+import com.mamdaero.global.exception.CustomException;
 
 public class CounselorItemNotFoundException extends CustomException  {
 
