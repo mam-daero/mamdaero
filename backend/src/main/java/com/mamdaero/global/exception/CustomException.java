@@ -9,7 +9,7 @@ public class CustomException extends RuntimeException {
     private final ExceptionConstants constants;
 
     public CustomException(ExceptionConstants constants) {
-        super(); // 상속 관계에서, super 사용 => 부모 클래스 초기, 부모 클래스의 기본 생성사 호출
+        super(constants.getCode()); // 상속 관계에서, super 사용 => 부모 클래스 초기, 부모 클래스의 기본 생성사 호출
         this.constants = constants;
     }
 
