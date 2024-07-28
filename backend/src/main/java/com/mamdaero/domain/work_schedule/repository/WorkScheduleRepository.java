@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface WorkScheduleRepository extends JpaRepository<WorkSchedule, Long> {
-    public List<WorkSchedule> findByIdAndDay(Long counselorId, Integer day);
+    List<WorkSchedule> findByCounselorIdAndDay(Long counselorId, Integer day);
+
 }
