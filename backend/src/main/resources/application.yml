@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: mamdaero
+  config:
+    import: application-secret.yml
