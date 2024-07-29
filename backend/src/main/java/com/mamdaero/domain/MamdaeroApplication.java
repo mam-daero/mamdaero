@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:53d23df81def26ecc2ee70d6628002dababcea3e3ccc2f190d728368ecebcd1c
-size 524
+package com.mamdaero.domain;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@EnableJpaAuditing
+@EnableScheduling
+@SpringBootApplication
+public class MamdaeroApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MamdaeroApplication.class, args);
+    }
+
+}
