@@ -1,15 +1,3 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  theme: {
-    extend: {
-      fontFamily: {
-        'apple-sdgothic-medium': ['AppleSDGothicNeoM', 'sans-serif'],
-        'apple-sdgothic-semi-bold': ['AppleSDGothicNeoSB', 'sans-serif'],
-        'apple-sdgothic-bold': ['AppleSDGothicNeoB', 'sans-serif'],
-        'apple-sdgothic-extra-bold': ['AppleSDGothicNeoEB', 'sans-serif'],
-      },
-    },
-  },
-  plugins: [require('daisyui')],
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:51861d3b0abd6b9a6da13e037fd54d8b0d9b66955e61d163af504e423a75e3cd
+size 544
