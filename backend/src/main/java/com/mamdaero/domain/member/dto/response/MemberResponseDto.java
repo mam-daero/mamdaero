@@ -1,13 +1,13 @@
-package com.mamdaero.domain.member.dto;
+package com.mamdaero.domain.member.dto.response;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.Data;
 
 import java.time.LocalDate;
 
 
-@Getter
-@Setter
+@Data
+@Builder
 public class MemberResponseDto {
     private Integer id;
     private String email;
