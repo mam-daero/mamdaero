@@ -1,15 +1,3 @@
-import { useState } from 'react';
-
-import NavClient from '@/components/navigation/NavClient.tsx';
-import MainPage from '@/pages/MainPage.tsx';
-function App() {
-  const [count, setCount] = useState(0);
-  return (
-    <div className="App">
-      <MainPage />
-      <NavClient />
-    </div>
-  );
-}
-
-export default App;
+version https://git-lfs.github.com/spec/v1
+oid sha256:2e9d28c6bcb40317a8d18b42aa0ca031fdad439166a47295bb34d5cea39508be
+size 951
