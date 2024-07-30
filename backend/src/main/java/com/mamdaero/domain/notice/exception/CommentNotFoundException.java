@@ -2,11 +2,11 @@ package com.mamdaero.domain.notice.exception;
 
 import com.mamdaero.domain.global.exception.CustomException;
 
-public class NoticeNotFoundException extends CustomException {
+public class CommentNotFoundException extends CustomException  {
 
     private static final long serialVersionUID = 1L;
 
-    public NoticeNotFoundException() {
-        super(NoticeExceptionConstants.NOTICE_NOT_FOUND);
+    public CommentNotFoundException() {
+        super(BoardExceptionConstants.COMMENT_NOT_FOUND);
     }
 }
