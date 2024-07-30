@@ -1,17 +1,3 @@
-package com.mamdaero.domain.notice.exception;
-
-import com.mamdaero.domain.global.exception.ExceptionConstants;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-
-@Getter
-@RequiredArgsConstructor
-public enum NoticeExceptionConstants implements ExceptionConstants {
-
-    NOTICE_NOT_FOUND("B001", HttpStatus.NOT_FOUND),
-    NOTICE_BAD_REQUEST("B002", HttpStatus.BAD_REQUEST);
-
-    private final String code;
-    private final HttpStatus status;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d067e4fdd57044d3f87a11f507d1784139a87c67b93d75fec31747f1471dd745
+size 552
