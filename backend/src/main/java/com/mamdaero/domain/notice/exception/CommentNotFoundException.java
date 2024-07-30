@@ -7,6 +7,6 @@ public class CommentNotFoundException extends CustomException  {
     private static final long serialVersionUID = 1L;
 
     public CommentNotFoundException() {
-        super(NoticeExceptionConstants.COMMENT_NOT_FOUND);
+        super(BoardExceptionConstants.COMMENT_NOT_FOUND);
     }
 }
