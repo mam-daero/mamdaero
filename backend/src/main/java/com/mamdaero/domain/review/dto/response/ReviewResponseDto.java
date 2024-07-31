@@ -7,9 +7,9 @@ import lombok.Data;
 @Data
 @Builder
 public class ReviewResponseDto {
+
     private String review;
     private Float score;
-
 
     public static ReviewResponseDto toDto(Review review) {
         return ReviewResponseDto.builder()

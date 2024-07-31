@@ -8,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CounselorRequestDto {
+
     private String intro;
     private String introDetail;
     private String img;

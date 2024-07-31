@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DiaryRequestDto {
+
     private String content;
     private LocalDate date;
     private Boolean isOpen;

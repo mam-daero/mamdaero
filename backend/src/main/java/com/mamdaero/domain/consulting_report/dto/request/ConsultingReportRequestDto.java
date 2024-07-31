@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ConsultingReportRequestDto {
+
     private String title;
     private String detail;
     private String opinion;
