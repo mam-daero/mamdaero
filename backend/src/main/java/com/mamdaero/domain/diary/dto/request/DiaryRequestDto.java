@@ -1,4 +1,4 @@
-package com.mamdaero.domain.diary.dto;
+package com.mamdaero.domain.diary.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,4 +14,5 @@ import java.time.LocalDate;
 public class DiaryRequestDto {
     private String content;
     private LocalDate date;
+    private Boolean isOpen;
 }
