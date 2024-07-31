@@ -1,4 +1,4 @@
-package com.mamdaero.domain.consulting_report.dto;
+package com.mamdaero.domain.consulting_report.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ConsultingReportRequestDto {
+
     private String title;
     private String detail;
     private String opinion;

@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MemberRequestDto {
+
     private String nickname;
     private LocalDate birth;
     private String tel;

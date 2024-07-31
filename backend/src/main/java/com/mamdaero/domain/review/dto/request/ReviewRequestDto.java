@@ -1,4 +1,4 @@
-package com.mamdaero.domain.review.dto;
+package com.mamdaero.domain.review.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReviewRequestDto {
+
     private String review;
     private Float score;
 }
