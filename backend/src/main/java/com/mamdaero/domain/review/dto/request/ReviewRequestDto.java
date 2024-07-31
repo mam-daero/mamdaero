@@ -1,4 +1,4 @@
-package com.mamdaero.domain.review.dto;
+package com.mamdaero.domain.review.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
