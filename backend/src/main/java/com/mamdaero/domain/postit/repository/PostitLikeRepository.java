@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface PostitLikeRepository extends JpaRepository<PostitLike, Long>  {
     Integer countByBoardId(Long postitId);
     boolean existsByBoardIdAndMemberId(Long id, Long memberId);
+    PostitLike findByBoardIdAndMemberId(Long boardId, Long memberId);
 }
