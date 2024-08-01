@@ -1,16 +1,3 @@
-import { useNavigate } from 'react-router-dom';
-const CounselorManageTime = () => {
-  const navigate = useNavigate();
-  const backToList = () => {
-    navigate('/counselor');
-  };
-  return (
-    <div>
-      <header className="flex gap-7">
-        <h1 className="text-black text-5xl font-bold">상담 일정 관리</h1>
-      </header>
-      <div className="divider"></div>
-    </div>
-  );
-};
-export default CounselorManageTime;
+version https://git-lfs.github.com/spec/v1
+oid sha256:0fdb0008756ce75ecc1f65019c26580833740656dc82cd31dc9d47d54d564b4d
+size 4217
