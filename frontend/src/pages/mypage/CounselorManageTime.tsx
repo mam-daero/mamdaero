@@ -1,4 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 const CounselorManageTime = () => {
+  const navigate = useNavigate();
+  const backToList = () => {
+    navigate('/counselor');
+  };
   return (
     <div>
       <header className="flex gap-7">

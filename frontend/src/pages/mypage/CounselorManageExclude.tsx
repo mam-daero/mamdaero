@@ -1,11 +1,3 @@
-const CounselorManageExclude = () => {
-  return (
-    <div>
-      <header className="flex gap-7">
-        <h1 className="text-black text-5xl font-bold">근무 예외 시간 관리</h1>
-      </header>
-      <div className="divider"></div>
-    </div>
-  );
-};
-export default CounselorManageExclude;
+version https://git-lfs.github.com/spec/v1
+oid sha256:dbfd09d98f6991cc35349187f95f4dd13390b17112221a83418772de2ff6f34c
+size 12857
