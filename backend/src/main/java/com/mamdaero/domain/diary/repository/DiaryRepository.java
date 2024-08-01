@@ -10,4 +10,6 @@ public interface DiaryRepository extends JpaRepository<Diary, Long> {
 
     List<Diary> findDiaryByMember(Member member);
 
+    List<Diary> findAllByMemberAndIsOpen(Member member, Boolean isOpen);
+
 }
