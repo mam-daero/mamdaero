@@ -1,8 +1,3 @@
-package com.mamdaero.domain.counselor_board.repository;
-
-import com.mamdaero.domain.counselor_board.entity.CounselorBoard;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface BoardRepository extends JpaRepository<CounselorBoard, Long> {
-    boolean existsByIdAndMemberId(Long id, Long memberId);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e74f46744ea28a1b72f7f84645cfdaff4cd909214e6c70df4b72853b62882c50
+size 1170
