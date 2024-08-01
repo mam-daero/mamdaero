@@ -7,3 +7,16 @@
 body {
   font-family: 'AppleSDGothicNeoM', sans-serif;
 }
+
+.large-placeholder::placeholder {
+  font-size: 1.5rem;
+  font-family: 'AppleSDGothicNeoSB', sans-serif;
+}
+.large-placeholder {
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+}
+.large-placeholder:focus {
+  outline: none;
+  border: 1px solid #ccc;
+}
