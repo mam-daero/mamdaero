@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BoardLikeRepository  extends JpaRepository<CounselorBoardLike, Long>  {
     CounselorBoardLike findByBoardIdAndMemberId(Long boardId, Long memberId);
+    boolean existsByBoardIdAndMemberId(Long id, Long memberId);
+    int countByBoardId(Long id);
 }
