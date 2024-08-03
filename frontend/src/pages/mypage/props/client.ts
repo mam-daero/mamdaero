@@ -7,6 +7,6 @@ interface client {
   birthdate: string;
   phone: string;
   gender: string;
-  password: number;
+  password: string;
 }
 export default client;
