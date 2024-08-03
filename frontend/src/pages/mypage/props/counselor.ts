@@ -6,6 +6,6 @@ interface counselor {
   phone: string;
   birthdate: string;
   gender: string;
-  password: number;
+  password: string;
 }
 export default counselor;
