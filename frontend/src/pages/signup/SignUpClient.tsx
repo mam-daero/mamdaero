@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5c2c5da99a4b99d8d4236bb20b0e2388ef2d9d4a8e6ef05cd7691d6d8b6b1068
-size 1185
+import React from 'react';
+import SignUpClientInput from '@/components/input/SignUpClientInput';
+
+const SignupClient: React.FC = () => {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen  w-full pt-28">
+      <h1 className="text-3xl font-bold mb-3">일반 회원 가입</h1>
+      <SignUpClientInput />
+    </div>
+  );
+};
+
+export default SignupClient;
