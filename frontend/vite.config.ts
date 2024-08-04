@@ -1,15 +1,3 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import svgr from 'vite-plugin-svgr';
-import path from 'path';
-
-// https://vitejs.dev/config/
-
-export default defineConfig({
-  plugins: [react(), svgr()],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
-});
+version https://git-lfs.github.com/spec/v1
+oid sha256:fb7d76ffa0b3834bb51c0abfff288e393d20ce8688342abef5f917d1bebfea3a
+size 519
