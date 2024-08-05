@@ -1,4 +1,4 @@
-package com.mamdaero.domain.global.exception;
+package com.mamdaero.global.exception;
 
 import lombok.Getter;
 
