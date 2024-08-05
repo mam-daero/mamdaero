@@ -1,11 +1,3 @@
-import React from 'react';
-
-const CounselHistory: React.FC = () => {
-  return (
-    <div>
-      <div>작성중</div>
-    </div>
-  );
-};
-
-export default CounselHistory;
+version https://git-lfs.github.com/spec/v1
+oid sha256:1571313066898b5f930831a97e795b61d85c07b30027426b492264509a72abb5
+size 3344
