@@ -1,6 +1,6 @@
 package com.mamdaero.domain.reservation.exception;
 
-import com.mamdaero.domain.global.exception.CustomException;
+import com.mamdaero.global.exception.CustomException;
 
 public class CanNotMakeReservationException extends CustomException {
 

@@ -1,6 +1,6 @@
 package com.mamdaero.domain.notice.exception;
 
-import com.mamdaero.domain.global.exception.CustomException;
+import com.mamdaero.global.exception.CustomException;
 
 public class CommentNotFoundException extends CustomException  {
 

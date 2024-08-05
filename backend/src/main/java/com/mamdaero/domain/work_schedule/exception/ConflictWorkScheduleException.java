@@ -1,6 +1,6 @@
 package com.mamdaero.domain.work_schedule.exception;
 
-import com.mamdaero.domain.global.exception.CustomException;
+import com.mamdaero.global.exception.CustomException;
 
 public class ConflictWorkScheduleException extends CustomException {
     public ConflictWorkScheduleException() {

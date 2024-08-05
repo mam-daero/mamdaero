@@ -1,6 +1,6 @@
 package com.mamdaero.domain.review.exception;
 
-import com.mamdaero.domain.global.exception.CustomException;
+import com.mamdaero.global.exception.CustomException;
 
 import java.io.Serial;
 
