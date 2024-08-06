@@ -1,11 +1,3 @@
-import React from 'react';
-
-const CounselRecordList: React.FC = () => {
-  return (
-    <div>
-      <div>작성중</div>
-    </div>
-  );
-};
-
-export default CounselRecordList;
+version https://git-lfs.github.com/spec/v1
+oid sha256:ca8db6efdbd7a04b9061c32c96a675637e7e8505e0454908ae9446ced5c1b17a
+size 4530
