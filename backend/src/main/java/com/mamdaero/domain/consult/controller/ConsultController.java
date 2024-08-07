@@ -1,14 +1,3 @@
-package com.mamdaero.domain.consult.controller;
-
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestController;
-
-@RequiredArgsConstructor
-@RestController
-public class ConsultController {
-    public ResponseEntity<?> enterRoom() {
-
-        return null;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:86d4a0d499cf1d0c31a1d40717a42ba8ef7a7ae6498c33d024a70ed328ebbde8
+size 1111
