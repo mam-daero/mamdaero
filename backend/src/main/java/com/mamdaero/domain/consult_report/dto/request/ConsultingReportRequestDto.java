@@ -1,4 +1,4 @@
-package com.mamdaero.domain.consulting_report.dto.request;
+package com.mamdaero.domain.consult_report.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
