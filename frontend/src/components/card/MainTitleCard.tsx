@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ce0790dbe6c1dbd88bbef0b1fd3a98b48a4f944c436fcab2708bc0717de77bf
-size 527
+import React from 'react';
+
+const MainTitleCard: React.FC = () => {
+  return (
+    <div className="flex bg-beige-100 w-70 rounded-lg text-left">
+      <div className="space-y-2">
+        <h1 className="text-black text-xl font-bold">마음도 관리가 필요하니까</h1>
+        <h2 className="text-orange-500 text-5xl font-bold">맘대로</h2>
+        <h3 className="text-black text-4xl font-bold">일상 멘탈 케어</h3>
+      </div>
+    </div>
+  );
+};
+
+export default MainTitleCard;
