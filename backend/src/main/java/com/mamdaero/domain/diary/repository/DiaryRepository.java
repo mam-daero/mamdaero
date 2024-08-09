@@ -1,15 +1,3 @@
-package com.mamdaero.domain.diary.repository;
-
-import com.mamdaero.domain.diary.entity.Diary;
-import com.mamdaero.domain.member.entity.Member;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
-
-public interface DiaryRepository extends JpaRepository<Diary, Long> {
-
-    List<Diary> findDiaryByMember(Member member);
-
-    List<Diary> findAllByMemberAndIsOpen(Member member, Boolean isOpen);
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6b8255905cf455801a44aa8119bfbae2d615e5e4e419cba6a7f0cc581e30f968
+size 684
