@@ -1,11 +1,3 @@
-package com.mamdaero.domain.member.repository;
-
-import com.mamdaero.domain.member.entity.Counselor;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
-
-public interface CounselorRepository extends JpaRepository<Counselor, Long> {
-
-    List<Counselor> findAllByNameContains(String counselorName);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:08df031d0ec99f7e5b8bc7c7afd91114e2c54a47ad629f90a3da36fbd6d98be9
+size 541
