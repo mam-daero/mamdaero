@@ -1,17 +1,3 @@
-package com.mamdaero.domain.member.exception;
-
-import com.mamdaero.global.exception.ExceptionConstants;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-
-@Getter
-@RequiredArgsConstructor
-public enum MemberExceptionConstants implements ExceptionConstants  {
-
-    FILE_NOT_FOUND("F001", HttpStatus.NOT_FOUND),
-    FILE_BAD_REQUEST("F002", HttpStatus.BAD_REQUEST);
-
-    private final String code;
-    private final HttpStatus status;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8086731ed93868cbc9ba3a54e17580de16d6031f450113c86f84ea97d2dc8d4f
+size 589

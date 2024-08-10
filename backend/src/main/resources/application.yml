@@ -11,3 +11,7 @@ livekit:
     key: ${LIVEKIT_API_KEY:devkey}
     secret: ${LIVEKIT_API_SECRET:secret}
 
+file:
+  upload-dir: /home/ubuntu/audio-save  # 배포환경용 경로 (Ubuntu)
+  #  upload-dir: C:\Users\SSAFY\Desktop\audio  # 개발환경용 경로 (Windows)
+

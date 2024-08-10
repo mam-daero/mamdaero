@@ -13,6 +13,7 @@ public class WorkTimeResponse {
     private Long id;
     private Long counselorId;
     private LocalDate date;
+    private Integer time;
     private Boolean isReserved;
     private Boolean isWorkTime;
 }
