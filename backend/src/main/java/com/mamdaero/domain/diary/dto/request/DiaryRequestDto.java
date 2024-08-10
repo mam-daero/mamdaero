@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class DiaryRequestDto {
 
+    private String emotion;
     private String content;
     private LocalDate date;
     private Boolean isOpen;
