@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface CounselorItemRepository extends JpaRepository<CounselorItem, Long> {
 
-    boolean existsByCounselorId(long counselorId);
-    List<CounselorItem> findByCounselorId(long counselorItemId);
+    List<CounselorItem> findByCounselorId(Long counselorItemId);
 }
