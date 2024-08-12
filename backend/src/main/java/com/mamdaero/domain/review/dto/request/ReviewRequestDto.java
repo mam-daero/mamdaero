@@ -12,5 +12,5 @@ import lombok.NoArgsConstructor;
 public class ReviewRequestDto {
 
     private String review;
-    private Float score;
+    private Double score;
 }
