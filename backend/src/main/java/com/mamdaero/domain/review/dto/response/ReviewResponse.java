@@ -11,7 +11,7 @@ public class ReviewResponse {
 
     private Long id;
     private String review;
-    private Float score;
+    private Double score;
 
 
 }
