@@ -1,9 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.example.mamdaero.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.example.mamdaero.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/mamdaero.iml" filepath="$PROJECT_DIR$/.idea/mamdaero.iml" />
-    </modules>
-  </component>
-</project>
+version https://git-lfs.github.com/spec/v1
+oid sha256:92f2fb87346eaaa7fa4096737b4c5adaa1b93483317dfe8cff47c6908974c253
+size 594
