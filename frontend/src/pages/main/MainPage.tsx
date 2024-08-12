@@ -1,14 +1,3 @@
-import LoginCard from '@/components/card/LoginCard';
-import MainTitleCard from '@/components/card/MainTitleCard';
-const MainPage = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="flex flex-col items-center space-y-7">
-        <MainTitleCard />
-        <LoginCard />
-      </div>
-    </div>
-  );
-};
-
-export default MainPage;
+version https://git-lfs.github.com/spec/v1
+oid sha256:1e48894971108023d3df4dc21d48acb22f36520fa2969f6da206e14b37f16976
+size 1046
