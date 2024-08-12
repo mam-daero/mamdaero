@@ -16,4 +16,5 @@ public class MemberRequestDto {
     private String nickname;
     private LocalDate birth;
     private String tel;
+    private String gender;
 }
