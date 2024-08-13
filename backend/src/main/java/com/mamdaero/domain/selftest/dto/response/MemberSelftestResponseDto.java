@@ -1,17 +1,3 @@
-package com.mamdaero.domain.selftest.dto.response;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class MemberSelftestResponseDto {
-    private Integer memberSelfTestId;
-    private Integer selftestId;
-    private Integer selftestTotalScore;
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9a6c9dd509a8f534ad434cf39f7831b010311a8b3b72a804f321b9c008b8b477
+size 1200
