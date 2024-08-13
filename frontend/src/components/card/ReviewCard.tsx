@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2861a96517d76d4013b6a7f424223ba6b12694b089d5320b4d7e536a7c8e5632
-size 586
+import { FaStar } from 'react-icons/fa6';
+interface ReviewCard {
+  review: string;
+  score: number;
+}
+const ReviewCard: React.FC<ReviewCard> = ({ review, score }) => {
+  return (
+    <div className="w-full p-4 bg-orange-100 rounded-md shadow-md">
+      <div className="flex mb-1">
+        <FaStar size={20} color="orange" />
+        <div className="text-md font-bold mx-1">{score}</div>
+      </div>
+      <div>{review}</div>
+    </div>
+  );
+};
+
+export default ReviewCard;
