@@ -15,5 +15,6 @@ public class ConsultReportListResponse {
     private Integer time;
     private String scriptUrl;
     private String summarizedScriptUrl;
-    private Long reportId;
+    private Long consultId;
+    private boolean hasReport;
 }
