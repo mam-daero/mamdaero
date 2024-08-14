@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class UpdateReviewRequest {
     private String review;
-    private Float score;
+    private Double score;
 
 }
