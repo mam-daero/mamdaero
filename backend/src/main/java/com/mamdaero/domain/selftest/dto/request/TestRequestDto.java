@@ -13,4 +13,5 @@ import java.util.List;
 @AllArgsConstructor
 public class TestRequestDto {
     private List<Integer> checkList;
+    private Boolean isPublic;
 }
