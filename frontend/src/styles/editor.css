@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:24a8239634c56b35384847df74a453c46efe0f7673286c9bd52eca3749e9204d
-size 620
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='sans-serif']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='sans-serif']::before {
+  content: 'Sans Serif';
+  font-family: 'sans-serif';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='serif']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='serif']::before {
+  content: 'Serif';
+  font-family: 'serif';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='monospace']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='monospace']::before {
+  content: 'Monospace';
+  font-family: 'monospace';
+}

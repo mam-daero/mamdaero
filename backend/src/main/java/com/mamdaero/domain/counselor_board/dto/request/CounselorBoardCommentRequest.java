@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4bcc9f3f7df79c67613d376620f0511c1f9ea25d9517a2a16e4e47a0a0cdad08
-size 690
+package com.mamdaero.domain.counselor_board.dto.request;
+
+import com.mamdaero.domain.counselor_board.entity.CounselorBoardComment;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class CounselorBoardCommentRequest {
+
+    private String comment;
+
+    public static CounselorBoardComment toEntity(Long boardId, Long memberId, CounselorBoardCommentRequest request) {
+        return CounselorBoardComment.builder()
+                .boardId(boardId)
+                .memberId(memberId)
+                .comment(request.getComment())
+                .build();
+    }
+}

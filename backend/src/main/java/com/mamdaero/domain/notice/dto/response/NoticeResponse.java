@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c5c3ba8e097ec485ad4f7b43b1e81297a25ae59b0af4111928083588f51b8e57
-size 756
+package com.mamdaero.domain.notice.dto.response;
+
+import com.mamdaero.domain.notice.entity.Notice;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class NoticeResponse {
+
+    private Long noticeId;
+    private String title;
+    private Integer view;
+    private LocalDateTime createdAt;
+
+    public static NoticeResponse of(Notice notice) {
+        return NoticeResponse.builder()
+                .noticeId(notice.getNoticeId())
+                .title(notice.getTitle())
+                .view(notice.getView())
+                .createdAt(notice.getCreatedAt())
+                .build();
+    }
+}

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:24208c050ca66e301632e65372aa0c9188b599bcdc20d094705460d0fda1511f
-size 524
+package com.mamdaero.domain.code.service;
+
+import com.mamdaero.domain.code.dto.response.CodeResponse;
+import com.mamdaero.domain.code.repository.CodeRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@RequiredArgsConstructor
+@Service
+public class CodeService {
+    private final CodeRepository codeRepository;
+
+
+    public List<CodeResponse> findCodesByCodeGroupName(String name) {
+        return codeRepository.findCodesByCodeGroupName(name);
+    }
+}

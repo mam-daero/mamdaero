@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:99ef03cefbda6666e637ef51b18a55f9f6dd4ade4cde95a76abd1775712bd701
-size 1177
+package com.mamdaero.domain.member.security.util;
+
+import com.mamdaero.domain.member.security.dto.UserDetailsImpl;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.context.SecurityContextHolder;
+
+@Slf4j
+public class SecurityUtil
+{
+    public static String getLoginEmail()
+    {
+        log.info("SecurityUtil : {}", SecurityContextHolder.getContext().getAuthentication());
+        if(SecurityContextHolder.getContext().getAuthentication().getPrincipal().equals("anonymousUser")) {
+            return null;
+        }
+        UserDetailsImpl user = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        log.info("SecurityUtil_USERNAME : {}", user.getEmail());
+        log.info("SecurityUtil_EMAIL : {}", user.getMember().getEmail());
+        log.info("SecurityUtil_PASSWORD : {}", user.getPassword());
+        return user.getMember().getEmail();
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        UserDetailsImpl user = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        return user.getUsername();
+    }
+}

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e96e51af670f67ed2bd9639e85645db0fb021427389b40449342895a36f2f74
-size 752
+declare module 'event-source-polyfill' {
+  export class EventSourcePolyfill extends EventTarget {
+    constructor(url: string, eventSourceInitDict?: EventSourceInit);
+    readonly CLOSED: number;
+    readonly CONNECTING: number;
+    readonly OPEN: number;
+    readonly readyState: number;
+    readonly url: string;
+    close(): void;
+    addEventListener(type: string, listener: EventListener): void;
+    removeEventListener(type: string, listener: EventListener): void;
+    dispatchEvent(event: Event): boolean;
+    onerror: (event: Event) => void;
+    onmessage: (event: MessageEvent) => void;
+    onopen: (event: Event) => void;
+  }
+
+  export interface EventSourceInit {
+    withCredentials?: boolean;
+    headers?: { [key: string]: string };
+  }
+}

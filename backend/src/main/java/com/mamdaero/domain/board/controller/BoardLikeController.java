@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8e30eb8b207943db28947720b7d61311a8f9758dcc3c70f4176ad5282aa5631b
-size 776
+package com.mamdaero.domain.board.controller;
+
+import com.mamdaero.domain.board.service.BoardLikeService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+@RequiredArgsConstructor
+public class BoardLikeController {
+
+    private final BoardLikeService boardLikeService;
+
+    @PostMapping("/cm/board/{boardId}/like")
+    public ResponseEntity<?> like(@PathVariable("boardId") Long id) {
+        if(boardLikeService.like(id)) {
+            return ResponseEntity.ok("좋아요 클릭");
+        }
+        return ResponseEntity.ok("좋아요 취소");
+    }
+}

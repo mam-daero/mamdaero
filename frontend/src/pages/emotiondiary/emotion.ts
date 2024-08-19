@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d2fd321abcc9c03d9c1b2e7943250905569a803dd51ce90a4060b837234f6bf3
-size 761
+// src/pages/emotiondiary/emotion.ts
+export type Emotion = '행복해요' | '화나요' | '우울해요' | '짜증나요' | '불안해요' | '슬퍼요';
+
+import happyFox from '@/assets/happy_fox.png';
+import angryFox from '@/assets/angry_fox.png';
+import depressedFox from '@/assets/depressed_fox.png';
+import annoyingFox from '@/assets/annoying_fox.png';
+import unrestFox from '@/assets/unrest_fox.png';
+import sadFox from '@/assets/sad_fox.png';
+
+export const emotionImages: Record<Emotion, string> = {
+  행복해요: happyFox,
+  화나요: angryFox,
+  우울해요: depressedFox,
+  짜증나요: annoyingFox,
+  불안해요: unrestFox,
+  슬퍼요: sadFox,
+};
+
+export function getEmotionImage(emotion: Emotion): string {
+  return emotionImages[emotion];
+}

@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d85c16b54cc1e313f8a285ab3d74b742225eec99d6b290ba7595bb0b17182b08
-size 1354
+package com.mamdaero.domain.notice.controller;
+
+import com.mamdaero.domain.notice.service.PNoticeService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+@RequiredArgsConstructor
+@RequestMapping("/p/notice")
+public class PNoticeController {
+
+    private final PNoticeService noticeService;
+
+    @GetMapping
+    public ResponseEntity<?> findAll(@RequestParam(name = "page", defaultValue = "0") int page,
+                                     @RequestParam(name = "size", defaultValue = "10") int size,
+                                     @RequestParam(name = "searchField", defaultValue = "") String searchField,
+                                     @RequestParam(name = "searchValue", defaultValue = "") String searchValue) {
+        return ResponseEntity.ok(noticeService.findAll(page, size, searchField, searchValue));
+    }
+
+    @GetMapping("/{noticeId}")
+    public ResponseEntity<?> findDetail(@PathVariable("noticeId") Long id) {
+        return ResponseEntity.ok(noticeService.findDetail(id));
+    }
+}

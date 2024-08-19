@@ -1,3 +1,64 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f98a1f78f5ec189571fc88504f2d1faf205d4c39ddd76e02a1309d4aed731ed3
-size 1451
+import {
+  complaintPostit,
+  createPostit,
+  deletePostit,
+  likePostit,
+  updatePostit,
+} from '@/api/postit';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+
+export const useComplaintPostit = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: complaintPostit,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['postits'] });
+    },
+  });
+};
+
+export const useLikePostit = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: likePostit,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['postits'] });
+    },
+  });
+};
+
+export const useCreatePostit = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: createPostit,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['postits'] });
+    },
+  });
+};
+
+export const useUpdatePostit = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: updatePostit,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['postits'] });
+    },
+  });
+};
+
+export const useDeletePostit = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: ({ questionId, id }: { questionId: number; id: number }) =>
+      deletePostit(questionId, id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['postits'] });
+    },
+  });
+};

@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ff1354c43a1af7448f31f1e46cecfd13f9f1bcb311824d8fa3cf8cb1d62ecc9a
-size 1251
+package com.mamdaero.domain.member.security.apiresult;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.mamdaero.domain.member.security.apiresult.status.SuccessStatus;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+@JsonPropertyOrder({"isSuccess", "code", "message", "result"})
+public class ApiResponse<T>
+{
+    @JsonProperty("isSuccess")
+    private final Boolean isSuccess;
+    private final String code;
+    private final String message;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private T result;
+
+    // 성공
+    public static <T> ApiResponse<T> onSuccess(T result)
+    {
+        return new ApiResponse<>(true, SuccessStatus._OK.getCode() , SuccessStatus._OK.getMessage(), result);
+    }
+
+    public static <T> ApiResponse<T> of(BaseCode code, T result)
+    {
+        return new ApiResponse<>(true, code.getReasonHttpStatus().getCode() , code.getReasonHttpStatus().getMessage(), result);
+    }
+
+    // 실패
+    public static <T> ApiResponse<T> onFailure(String code, String message, T data)
+    {
+        return new ApiResponse<>(false, code, message, data);
+    }
+}

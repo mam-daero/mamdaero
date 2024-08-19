@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9ead0d48e7cc2ed2d3ff828fdb8f81577b801276b0f3341dfb672a417cc029d4
-size 1154
+package com.mamdaero.domain.consult.repository;
+
+import com.mamdaero.domain.consult.dto.response.ClientListResponse;
+import com.mamdaero.domain.consult.entity.Consult;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+public interface ConsultRepository extends JpaRepository<Consult, Long> {
+
+    @Query(
+            "SELECT distinct new com.mamdaero.domain.consult.dto.response.ClientListResponse(" +
+                    "m.id, m.name" +
+                    ") " +
+                    "FROM Reservation r " +
+                    "JOIN Member m ON r.memberId = m.id " +
+                    "JOIN CounselorItem ci ON r.counselorItemId = ci.counselorItemId " +
+                    "WHERE (:name IS NULL OR m.name LIKE CONCAT('%', :name, '%'))" +
+                    "AND ci.counselorId = :counselorId")
+    Page<ClientListResponse> findMyClientList(@Param("counselorId") Long counselorId, @Param("name") String name, Pageable pageable);
+}

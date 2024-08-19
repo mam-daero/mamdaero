@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:868972583fa5feac298d0808333f1b51a2c29233b65f8977d44e594288d8725a
-size 572
+package com.mamdaero.domain.selftest.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@ToString(callSuper = true)
+public class SelftestQuestionOption {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "selftest_question_option_id")
+    private Integer id;
+    @ManyToOne
+    @JoinColumn(name = "selftest_question_id")
+    private SelftestQuestion selftestQuestion;
+    private String selftestQuestionOptionDetail;
+    private Integer selftestQuestionOptionScore;
+
+}

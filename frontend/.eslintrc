@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3c2c01c80c6fd0b0274ea9f79dc5d8639f26c49a7b6197af2f5ea61665a30c6
-size 949
+{
+  "env": {
+    "browser": true, // 브라우저 환경을 활성화합니다.
+    "node": true, // Node.js 환경을 활성화합니다. (필요에 따라 추가)
+    "jest": true,
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+  ],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "react/prop-types": "off",
+    "no-console": "warn",
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "no-var": "error",
+    "no-duplicate-imports": "error",
+    "comma-dangle": ["error", "always-multiline"], // 콤마 규칙 추가
+    "react/react-in-jsx-scope": "off", // 'React' must be in scope when using JSX 규칙을 비활성화
+    "@typescript-eslint/no-unused-vars": "off",
+  },
+  "settings": {
+    "react": {
+      "version": "detect",
+    },
+  },
+}

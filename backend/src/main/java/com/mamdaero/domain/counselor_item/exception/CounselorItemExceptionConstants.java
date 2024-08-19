@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db605c6f654de7c315f2e8bcb6b2604bf78786b71e0471ad6d1ace38572ec0c6
-size 573
+package com.mamdaero.domain.counselor_item.exception;
+
+import com.mamdaero.global.exception.ExceptionConstants;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+
+@Getter
+@RequiredArgsConstructor
+public enum CounselorItemExceptionConstants implements ExceptionConstants {
+
+    COUNSELOR_NOT_FOUND("C001", HttpStatus.NOT_FOUND),
+    COUNSELOR_BAD_REQUEST("C002", HttpStatus.BAD_REQUEST),
+    COUNSELOR_ITEM_NOT_FOUND("C003", HttpStatus.NOT_FOUND);
+
+    private final String code;
+    private final HttpStatus status;
+}

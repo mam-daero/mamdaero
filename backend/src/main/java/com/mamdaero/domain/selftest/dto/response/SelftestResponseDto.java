@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:79e4107b977d06981daa095d2a79925a3379496a4e4438cf40f55a0768f15f45
-size 587
+package com.mamdaero.domain.selftest.dto.response;
+
+import com.mamdaero.domain.selftest.entity.Selftest;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class SelftestResponseDto {
+    private Integer id;
+    private String selftestName;
+    private String selftestInfo;
+
+    public static SelftestResponseDto toDTO(Selftest selftest) {
+        return SelftestResponseDto.builder()
+                .id(selftest.getId())
+                .selftestName(selftest.getSelftestName())
+                .selftestInfo(selftest.getSelftestInfo())
+                .build();
+    }
+}

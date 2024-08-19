@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:530fbd1c8c35af305ea655fbe1ce1cdfdcc68f351a8d7db3cfe2fbd87c7837e7
-size 745
+import axios from 'axios';
+import useAuthStore from '@/stores/authStore';
+const accessToken = useAuthStore.getState().accessToken;
+
+const axiosInstance = axios.create({
+  baseURL: 'https://mamdaero.o-r.kr/api/',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${accessToken}`,
+  },
+  maxContentLength: Infinity,
+  maxBodyLength: Infinity,
+});
+
+axiosInstance.interceptors.request.use(
+  config => {
+    const accessToken = useAuthStore.getState().getAccessToken();
+    if (accessToken) {
+      config.headers['Authorization'] = `Bearer ${accessToken}`;
+    }
+    return config;
+  },
+  error => {
+    return Promise.reject(error);
+  }
+);
+
+axiosInstance.interceptors.response.use();
+
+export default axiosInstance;

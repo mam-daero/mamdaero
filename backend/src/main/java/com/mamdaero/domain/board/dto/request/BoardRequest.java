@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:177c99a5fb5e4d2d97a35bebac77a9240e2dc0e35a4dcee7c64cbc64c41faf4f
-size 610
+package com.mamdaero.domain.board.dto.request;
+
+import com.mamdaero.domain.board.entity.Board;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class BoardRequest {
+
+    private String title;
+    private String content;
+
+    public static Board toEntity(Long memberId, BoardRequest request) {
+        return Board.builder()
+                .memberId(memberId)
+                .title(request.getTitle())
+                .content(request.getContent())
+                .build();
+    }
+}

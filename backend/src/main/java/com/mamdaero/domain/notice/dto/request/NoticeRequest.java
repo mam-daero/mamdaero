@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d491c09aeac409bc060710915b35943534751c4490f766e1ab396d2156089eec
-size 618
+package com.mamdaero.domain.notice.dto.request;
+
+import com.mamdaero.domain.notice.entity.Notice;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class NoticeRequest {
+
+    private String title;
+    private String content;
+
+    public static Notice toEntity(Long memberId, NoticeRequest request) {
+        return Notice.builder()
+                .memberId(memberId)
+                .title(request.getTitle())
+                .content(request.getContent())
+                .build();
+    }
+}

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:290d8a2e5e795f79f02c3f74dcfc47e7fd5e4d0315636a24e2293c340bf08e2a
-size 608
+package com.mamdaero.domain.postit.repository;
+
+import com.mamdaero.domain.postit.entity.Postit;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface PostitRepository extends JpaRepository<Postit, Long> {
+    Page<Postit> findByQuestionIdOrderByCreatedAtDesc(Long questionId, Pageable pageable);
+    Optional<Postit> findByQuestionIdAndIdAndMemberId(Long questionId, Long postitId, Long memberId);
+    boolean existsByIdAndMemberId(Long id, Long memberId);
+}

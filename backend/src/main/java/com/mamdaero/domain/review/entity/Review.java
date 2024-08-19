@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3c2b142bd61f5752ac7cbd88a7acd690a8063cdf121a3e246ccd371baf5916c7
-size 900
+package com.mamdaero.domain.review.entity;
+
+import com.mamdaero.domain.review.dto.request.UpdateReviewRequest;
+import com.mamdaero.global.entity.BaseEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
+@Entity
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
+@ToString(callSuper = true)
+public class Review extends BaseEntity {
+
+    @Id
+    @Column(name = "review_id")
+    private Long id;
+    @Column(nullable = false)
+    private String review;
+    @Column(nullable = false)
+    private Double score;
+    @Builder.Default
+    private Boolean isDelete = false;
+
+    public void update(UpdateReviewRequest request) {
+        this.review = request.getReview();
+        this.score = request.getScore();
+    }
+
+    public void delete() {
+        this.isDelete = true;
+    }
+}

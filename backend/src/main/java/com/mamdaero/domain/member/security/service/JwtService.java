@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:891b2177efb878a3afb1e6ed93065814a3c7aff1e8697573fb1771c2f16c7cc2
-size 977
+package com.mamdaero.domain.member.security.service;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.util.Optional;
+
+public interface JwtService
+{
+    String createAccessToken(String email);
+    String createRefreshToken();
+    void updateRefreshToken(String email, String refreshToken);
+    void destroyRefreshToken(String email);
+    void sendAccessAndRefreshToken(HttpServletResponse response, String accessToken, String refreshToken);
+    void sendAccessToken(HttpServletResponse response, String accessToken);
+    Optional<String> extractAccessToken(HttpServletRequest request);
+    Optional<String> extractRefreshToken(HttpServletRequest request);
+    Optional<String> extractEmail(String accessToken);
+    void setAccessTokenHeader(HttpServletResponse response, String accessToken);
+    void setRefreshTokenHeader(HttpServletResponse response, String refreshToken);
+    boolean isTokenValid(String token);
+}

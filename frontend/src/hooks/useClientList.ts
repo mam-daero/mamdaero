@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e48e08fc0b4901bf96729183b2b80b2fa64c4873bdb604ae2826137b34f7a71
-size 716
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
+import axiosInstance from '@/api/axiosInstance';
+
+interface Client {
+  id: number;
+  name: string;
+}
+
+export interface ClientListResponse {
+  data: Client[];
+  totalPages: number;
+}
+
+const fetchClients = async (): Promise<ClientListResponse> => {
+  const response = await axiosInstance.get<ClientListResponse>('c/client');
+  return response.data;
+};
+
+const useClientList = (): UseQueryResult<ClientListResponse, Error> => {
+  return useQuery<ClientListResponse, Error>({
+    queryKey: ['clients'],
+    queryFn: fetchClients,
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    gcTime: 10 * 60 * 1000, // 10 minutes
+  });
+};
+
+export default useClientList;

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:59e0a825a2818cafa65764397dd59c9c328a8a02bc765e86ef156471d34e2994
-size 836
+package com.mamdaero.domain;
+
+import com.mamdaero.global.config.FileStorageProperties;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@EnableJpaAuditing
+@EnableScheduling
+@ComponentScan(basePackages = {"com.mamdaero.global", "com.mamdaero"})
+@EnableConfigurationProperties(FileStorageProperties.class)
+@SpringBootApplication
+public class MamdaeroApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MamdaeroApplication.class, args);
+    }
+
+}

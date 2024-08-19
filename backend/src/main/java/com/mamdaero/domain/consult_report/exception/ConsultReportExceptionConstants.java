@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e7fb1837d196d29bc74a25731d69a81b9bd0b0b83ea7e6e7277d39aab43cacf9
-size 784
+package com.mamdaero.domain.consult_report.exception;
+
+import com.mamdaero.global.exception.ExceptionConstants;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+
+@Getter
+@RequiredArgsConstructor
+public enum ConsultReportExceptionConstants implements ExceptionConstants {
+
+    CONSULT_REPORT_NOT_FOUND("CR001", HttpStatus.NOT_FOUND),
+    CONSULT_REPORT_BAD_REQUEST("CR002", HttpStatus.BAD_REQUEST),
+    CONSULT_REPORT_UNAUTHORIZED("CR003", HttpStatus.UNAUTHORIZED),
+    CONSULT_REPORT_NO_TITLE("CR004", HttpStatus.BAD_REQUEST),
+    CONSULT_REPORT_NO_DETAIL("CR005", HttpStatus.BAD_REQUEST),
+    CONSULT_REPORT_ALREADY_EXIST("CR006", HttpStatus.BAD_REQUEST);
+
+    private final String code;
+    private final HttpStatus status;
+}

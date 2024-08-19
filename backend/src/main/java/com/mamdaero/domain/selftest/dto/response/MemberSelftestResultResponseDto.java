@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9b945306bceba52370d8ce406db63c27ab22c5c10b9c537702590cc183cdb55c
-size 1016
+package com.mamdaero.domain.selftest.dto.response;
+
+import com.mamdaero.domain.selftest.entity.MemberSelftestList;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class MemberSelftestResultResponseDto {
+    private Integer memberSelfTestId;
+    private String selftestName;
+    private Integer selftestTotalScore;
+    private LocalDate memberSelftestDate;
+
+    public static MemberSelftestResultResponseDto toDTO(MemberSelftestList memberSelftestList) {
+        return MemberSelftestResultResponseDto.builder()
+                .memberSelfTestId(memberSelftestList.getId())
+                .selftestName(memberSelftestList.getSelftest().getSelftestName())
+                .selftestTotalScore(memberSelftestList.getSelftestTotalScore())
+                .memberSelftestDate(memberSelftestList.getMemberSelftestDate().toLocalDate())
+                .build();
+    }
+}

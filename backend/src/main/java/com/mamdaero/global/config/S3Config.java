@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c47ad4ade31c168300947096dcc67e10f00f986e3532ed93769d0c6b506a299f
-size 1115
+package com.mamdaero.global.config;
+
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class S3Config {
+    @Value("${cloud.aws.credentials.accessKey}")
+    private String accessKey;
+    @Value("${cloud.aws.credentials.secretKey}")
+    private String secretKey;
+    @Value("${cloud.aws.region.static}")
+    private String region;
+
+    @Bean
+    public AmazonS3 amazonS3() {
+        BasicAWSCredentials awsCredentials = new BasicAWSCredentials(accessKey, secretKey);
+        return AmazonS3ClientBuilder.standard()
+                .withRegion(Regions.fromName(region)) // Regions 클래스를 통해 region 설정
+                .withCredentials(new AWSStaticCredentialsProvider(awsCredentials))
+                .build();
+    }
+}

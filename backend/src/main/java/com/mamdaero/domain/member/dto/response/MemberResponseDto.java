@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c527baf91e21bdeb19a1cbf9d7d4c25e25d37c7d42dd73e9a35588ad5b6d2d3a
-size 830
+package com.mamdaero.domain.member.dto.response;
+
+import com.mamdaero.domain.member.entity.Member;
+import lombok.Builder;
+import lombok.Data;
+
+import java.time.LocalDate;
+
+
+@Data
+@Builder
+public class MemberResponseDto {
+
+    private Long id;
+    private String email;
+    private String name;
+    private String nickname;
+    private LocalDate birth;
+    private String tel;
+    private String gender;
+
+    public static MemberResponseDto toDTO(Member member) {
+        return MemberResponseDto.builder()
+                .id(member.getId())
+                .email(member.getEmail())
+                .name(member.getName())
+                .nickname(member.getNickname())
+                .birth(member.getBirth())
+                .tel(member.getTel())
+                .gender(member.getGender())
+                .build();
+    }
+}

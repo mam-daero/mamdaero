@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:77f2a24de7fcb4579a4705d3f95c125aa6ae4703fa52b7073c9dc08750500c9d
-size 648
+package com.mamdaero.domain.counselor_board.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "counselor_board_like")
+public class CounselorBoardLike {
+
+    @Id
+    @Column(name = "counselor_board_like_id", updatable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "counselor_board_id", nullable = false)
+    private Long boardId;
+
+    @Column(name = "member_id", nullable = false)
+    private Long memberId;
+}

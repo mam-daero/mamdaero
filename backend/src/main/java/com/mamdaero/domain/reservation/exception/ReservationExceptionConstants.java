@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c9bf9cf31e2662b7f638eef185e929d522bed082846c85f4721d7d0d925dbcd0
-size 638
+package com.mamdaero.domain.reservation.exception;
+
+import com.mamdaero.global.exception.ExceptionConstants;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+
+@Getter
+@RequiredArgsConstructor
+public enum ReservationExceptionConstants implements ExceptionConstants {
+    RESERVATION_NOT_FOUND("RES001", HttpStatus.NOT_FOUND),
+    CAN_NOT_MAKE_RESERVATION("RES002", HttpStatus.INTERNAL_SERVER_ERROR),
+    INVALID_SYMPTOM("RES003", HttpStatus.BAD_REQUEST),
+    INVALID_SITUATION("RES004", HttpStatus.BAD_REQUEST);
+
+    private final String code;
+    private final HttpStatus status;
+}

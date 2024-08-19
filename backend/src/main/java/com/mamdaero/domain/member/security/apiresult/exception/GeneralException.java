@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e743a26cd8ad1d4eb5069d793f47c7244757447e4077a0cf1ccefa6cb83e03f
-size 586
+package com.mamdaero.domain.member.security.apiresult.exception;
+
+import com.mamdaero.domain.member.security.apiresult.BaseErrorCode;
+import com.mamdaero.domain.member.security.apiresult.ErrorReasonDTO;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public class GeneralException extends RuntimeException
+{
+    private BaseErrorCode code;
+
+    public ErrorReasonDTO getErrorReason()
+    {
+        return this.code.getReason();
+    }
+
+    public ErrorReasonDTO getErrorReasonHttpStatus()
+    {
+        return this.code.getReasonHttpStatus();
+    }
+}

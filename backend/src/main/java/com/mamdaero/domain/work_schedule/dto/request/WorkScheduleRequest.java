@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b3e9d8bd9669e96c5895b71839493c9634023e366da4fabd8667c09996e7e62
-size 613
+package com.mamdaero.domain.work_schedule.dto.request;
+
+import com.mamdaero.domain.work_schedule.entity.WorkSchedule;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class WorkScheduleRequest {
+    private Integer day;
+    private Integer startTime;
+    private Integer endTime;
+
+    public WorkSchedule toEntity() {
+        return WorkSchedule.builder()
+                .day(day)
+                .startTime(startTime)
+                .endTime(endTime)
+                .build();
+    }
+}
+
+

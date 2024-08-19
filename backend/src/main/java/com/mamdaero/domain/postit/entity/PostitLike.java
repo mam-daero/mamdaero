@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8a4f9dc02913b0c76c2d9ebba0bcbd19148c1aec113037029b30a7c6a55ebb1
-size 599
+package com.mamdaero.domain.postit.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "post_like")
+public class PostitLike {
+
+    @Id
+    @Column(name = "post_like_id", updatable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "post_id", nullable = false)
+    private Long boardId;
+
+    @Column(name = "member_id", nullable = false)
+    private Long memberId;
+}

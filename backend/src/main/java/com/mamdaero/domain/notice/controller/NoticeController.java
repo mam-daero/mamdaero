@@ -1,3 +1,50 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:af820b331c4bb86bf26c317d5ff3fae16f5afb7ede474d7303382cc720c04292
-size 1879
+package com.mamdaero.domain.notice.controller;
+
+import com.mamdaero.domain.member.security.service.FindUserService;
+import com.mamdaero.domain.notice.dto.request.NoticeRequest;
+import com.mamdaero.domain.notice.service.NoticeService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Objects;
+
+@Controller
+@RequiredArgsConstructor
+@RequestMapping("/a/notice")
+public class NoticeController {
+
+    private final NoticeService noticeService;
+    private final FindUserService findUserService;
+
+    @PostMapping
+    public ResponseEntity<?> create(@RequestBody NoticeRequest request) {
+        if (Objects.equals(findUserService.findMemberRole(), "관리자")) {
+            noticeService.create(findUserService.findMemberId(), request);
+            return ResponseEntity.ok().build();
+        }
+
+        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+    }
+
+    @PatchMapping("/{noticeId}")
+    public ResponseEntity<?> update(@PathVariable("noticeId") Long id, @RequestBody NoticeRequest request) {
+
+        if (Objects.equals(findUserService.findMemberRole(), "관리자")) {
+            return ResponseEntity.ok(noticeService.update(findUserService.findMemberId(), id, request));
+        }
+        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+    }
+
+    @DeleteMapping("/{noticeId}")
+    public ResponseEntity<?> delete(@PathVariable("noticeId") Long id) {
+        if (Objects.equals(findUserService.findMemberRole(), "관리자")) {
+            noticeService.delete(findUserService.findMemberId(), id);
+        return ResponseEntity.ok().build();
+        }
+        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+    }
+}

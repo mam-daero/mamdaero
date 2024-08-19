@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:06502bdc5799a891f6224d0e9ec638b37e72de04ff833d76afd27537770b8b27
-size 851
+package com.mamdaero.domain.reservation.dto.response;
+
+import com.mamdaero.domain.reservation.entity.Status;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ReservationResponse {
+    private Long reservationId;
+    private Long memberId;
+    private Long CounselorId;
+    private LocalDate date;
+    private Integer time;
+    private Status status;
+    private String itemName;
+    private Integer itemFee;
+    private String canceler;
+    private LocalDateTime canceledAt;
+    private String requirement;
+    private Boolean isDiaryShared;
+    private Boolean isTestShared;
+    private List<SituationResponse> situations;
+    private List<SymptomResponse> symptoms;
+}

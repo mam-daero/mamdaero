@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68262307fbbbc03942835521c541f9276520b3728d8f4885779c3777915047e3
-size 595
+package com.mamdaero.global.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOriginPatterns("*")
+                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+                .allowCredentials(true);
+    }
+}

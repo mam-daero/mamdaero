@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:093f2f0fe7944c90de9e098c19376e7fe13ba738104d0c6bb5d78de4bb3c9544
-size 714
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.32/17d46b3e205515e1e8efd3ee4d57ce8018914163/lombok-1.18.32.jar" />
+        </processorPath>
+        <module name="com.example.mamdaero.main~2" />
+        <module name="com.example.mamdaero.test" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

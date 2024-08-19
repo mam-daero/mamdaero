@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86d4a0d499cf1d0c31a1d40717a42ba8ef7a7ae6498c33d024a70ed328ebbde8
-size 1111
+package com.mamdaero.domain.consult.controller;
+
+import com.mamdaero.domain.consult.dto.response.ClientListResponse;
+import com.mamdaero.domain.consult.service.ConsultService;
+import com.mamdaero.global.dto.Pagination;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RequiredArgsConstructor
+@RestController
+public class ConsultController {
+
+    private final ConsultService consultService;
+
+    @GetMapping("/c/client")
+    public ResponseEntity<Pagination<ClientListResponse>> findMyClientList(
+            @RequestParam(name = "page", defaultValue = "0") int page,
+            @RequestParam(name = "size", defaultValue = "10") int size,
+            @RequestParam(name = "name", required = false) String search
+    ) {
+        return ResponseEntity.ok(consultService.findMyClientList(page, size, search));
+    }
+
+    public ResponseEntity<?> enterRoom() {
+
+        return null;
+    }
+}

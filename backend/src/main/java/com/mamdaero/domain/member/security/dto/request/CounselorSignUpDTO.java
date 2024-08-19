@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b9b010594b3a8dc98d95011e26f64ad85012322663f6ac05443487dab6985b56
-size 667
+package com.mamdaero.domain.member.security.dto.request;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class CounselorSignUpDTO
+{
+    private String email;
+    private String password;
+    private String name;
+    private String nickname;
+    private LocalDate birth;
+    private String tel;
+    private String gender;
+    private String role;
+    private String address;
+    private Integer level;
+    private String license;
+    private String intro;
+    private String introDetail;
+    private String img;
+}

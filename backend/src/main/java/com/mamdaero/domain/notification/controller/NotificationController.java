@@ -1,3 +1,43 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3cc55170c0896c79760b56d32af23c5647b8e34dcb9c1e2d6559242c76b38ddd
-size 1618
+package com.mamdaero.domain.notification.controller;
+
+import com.mamdaero.domain.notification.service.NotificationService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+
+import java.io.IOException;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/cm/notification")
+public class NotificationController {
+
+    private final NotificationService notificationService;
+    public static Map<Long, SseEmitter> sseEmitters = new ConcurrentHashMap<>();
+
+    @GetMapping("/connect")
+    public SseEmitter subscribe() {
+        return notificationService.subscribe();
+    }
+
+    @GetMapping
+    public ResponseEntity<?> notification(@RequestParam(name = "page", defaultValue = "0") int page,
+                                          @RequestParam(name = "size", defaultValue = "10") int size) {
+        return ResponseEntity.ok(notificationService.notification(page, size));
+    }
+
+    @PatchMapping("/{notificationId}")
+    public ResponseEntity<?> readNotification(@PathVariable("notificationId") Long id) throws IOException {
+        notificationService.readNotification(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{notificationId}")
+    public ResponseEntity<?> deleteNotification(@PathVariable("notificationId") Long id) throws IOException {
+        notificationService.deleteNotification(id);
+        return ResponseEntity.ok().build();
+    }
+}

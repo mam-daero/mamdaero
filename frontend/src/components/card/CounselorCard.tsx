@@ -1,3 +1,49 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:17cb9b60a9f9ec2de091cf0f3619788acce6f9d1d8ea3497228b1055affec489
-size 1704
+import { Link } from 'react-router-dom';
+import DefaultProfile from '@/assets/DefaultProfile.jpg';
+import { FaStar } from 'react-icons/fa6';
+
+interface CounselorCardProps {
+  counselorId: string;
+  counselorName: string;
+  counselorIntro: string;
+  counselorImage?: string; // 이미지가 선택적이라면 optional로 설정
+  reviewAvgScore: number;
+  reviewCount: number;
+}
+const CounselorCard: React.FC<CounselorCardProps> = ({
+  counselorId,
+  counselorName,
+  counselorIntro,
+  counselorImage = DefaultProfile, // 기본 이미지를 제공
+  reviewAvgScore,
+  reviewCount,
+}) => {
+  return (
+    <div className="border-b-2 border-b-gray-300">
+      <div className="w-full p-6 grid grid-cols-6">
+        <div className="col-span-4 flex flex-col">
+          <div className="flex items-center">
+            <div className="text-2xl font-bold">{counselorName}</div>
+            <div className="flex ms-1">
+              <FaStar size={20} color="orange" className="ms-2" />
+              <div className="text-md font-bold mx-1">{reviewAvgScore}</div>
+              <div>({reviewCount})</div>
+            </div>
+          </div>
+          <div className="text-md mt-3">{counselorIntro}</div>
+          <div className="mt-auto transition-transform transform hover:-translate-y-1">
+            <Link to={`/counselor/${counselorId}`} className="text-orange-400 font-bold ">
+              상담사 프로필 보기
+            </Link>
+          </div>
+        </div>
+
+        <div className="col-span-2 flex justify-end items-start">
+          <img src={DefaultProfile} className="w-32 h-40 object-cover rounded-lg" alt="" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CounselorCard;

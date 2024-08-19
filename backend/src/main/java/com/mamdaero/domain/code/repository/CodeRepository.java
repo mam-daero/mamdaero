@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a60d2a45352d6de9d45439651b9d0b95aba0bb640f121a69df82cee76b08ddd7
-size 688
+package com.mamdaero.domain.code.repository;
+
+import com.mamdaero.domain.code.dto.response.CodeResponse;
+import com.mamdaero.domain.code.entity.Code;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
+
+public interface CodeRepository extends JpaRepository<Code, Long> {
+    @Query("SELECT new com.mamdaero.domain.code.dto.response.CodeResponse(c.id, c.name) " +
+            "FROM Code c JOIN c.codeGroup cg WHERE cg.name = :name")
+    List<CodeResponse> findCodesByCodeGroupName(@Param("name") String name);
+
+    Code findCodeById(Long id);
+}
